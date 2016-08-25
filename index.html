@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>MapView App Ver. 0.0.2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBq1e_eCd99CBzhbVUY6VETSQWkq6E9wfI"></script>
+        <script src="gmap.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="engine.js"></script>
+        <script src="functions.js"></script>
+        
+        
+        
+        
+        <style>
+             footer {
+             background-color: #555;
+              color: white;
+              padding: 15px;
+             }
+              
+        </style>
+       
+        <script>
+
+        </script>
+      
+
+    </head>
+ 
+    <body>
+
+        
+         <div class="container-fluid" style="background-color: #0094ff">
+           
+                <p id="serverMessage"><strong>Server:</strong></p>
+            
+         </div>
+
+        <div class="container-fluid" id="buttonDiv">
+                <button type="button" class="btn btn-info" id="updateBtn">Update</button>
+                <button type="button" class="btn btn-default" id="sendUpdateBtn">Send</button>
+                <button type="button" class="btn btn-success" id="LRFUpdatesBtn">LRF Updates</button>
+                <button type="button" class="btn btn-warning" id="GPSUpdatesBtn">GPS Updates</button>
+                <button type="button" class="btn btn-primary" id="getNewUpdatesBtn">Get New Updates</button>
+        </div>
+
+       
+        <div class="container-fluild" style="background-color: #00ff90" id="chatDiv" style="max-width: 1500px; height:250px">
+            <h1>Communication with socket.io!</h1>
+            <h3 style="color: #0094ff" id="serverMessage"></h3>
+            <form action="/" method="post" id="clientNameForm">
+                <input type="text" name="clientName" id="clientName" placeholder="Enter your first name here" size="20" autofocus>
+                <input type="submit" value="Submit" id="submitName">
+            </form>
+        
+            <input type="button" value="Poke the server" id="poke"><br>
+            
+            <form action="/" method="post" id="clientMessageForm">
+                <input type="text" name="messageFClient" id="messageFClient" placeholder="Type your message here" size="50" autofocus>
+                <input type="submit" value="Send" id="sendMessage">
+            </form>
+            
+            <section id="chatZone">
+            </section>
+        
+        </div>
+
+        <div class="container-fluid" id="googleMap" style="max-width:2000px;height:600px;"></div>
+        <!--
+        
+        <footer class="container-fluid text-center navbar-fixed-bottom">
+         MapView Ver 0.0.2
+        </footer>
+        
+        -->
+        
+
+        
+
+    </body>
+</html>
